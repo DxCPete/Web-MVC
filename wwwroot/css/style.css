@@ -1,0 +1,33 @@
+﻿:root {
+    --rows: 0;
+    --columns: 0;
+}
+
+body {
+}
+
+
+button {
+    padding: var(--rows);
+    margin: 1vw;
+}
+
+.crossword {
+    display: grid;
+    grid-template-columns: repeat(calc(100% / var(--columns)), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+    background-color: deeppink;
+}
+
+.row {
+    display: flex;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 20px;
+}

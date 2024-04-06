@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|c:\\users\\pete\\onedrive\\desktop\\todo\\bak web\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\views\\home\\crosswordpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:views\\home\\crosswordpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\models\\crosswordbritish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:models\\crosswordbritish.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\models\\dictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:models\\dictionary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\models\\crossword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:models\\crossword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CrosswordBritish.cs",
+              "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\CrosswordBritish.cs",
+              "RelativeDocumentMoniker": "Models\\CrosswordBritish.cs",
+              "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\CrosswordBritish.cs",
+              "RelativeToolTip": "Models\\CrosswordBritish.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAEwCUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:31:43.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Crossword.cs",
+              "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\Crossword.cs",
+              "RelativeDocumentMoniker": "Models\\Crossword.cs",
+              "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\Crossword.cs",
+              "RelativeToolTip": "Models\\Crossword.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAAUwDgAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T14:30:29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Dictionary.cs",
+              "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\Dictionary.cs",
+              "RelativeDocumentMoniker": "Models\\Dictionary.cs",
+              "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\Dictionary.cs",
+              "RelativeToolTip": "Models\\Dictionary.cs",
+              "ViewState": "AQIAAIgAAAAAAAAAAAAewJQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T15:07:12.788Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-29T09:12:58.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CrosswordPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\CrosswordPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\CrosswordPartial.cshtml",
+              "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\CrosswordPartial.cshtml",
+              "RelativeToolTip": "Views\\Home\\CrosswordPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-29T09:12:46.509Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "JavaScript.js",
+              "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\wwwroot\\js\\JavaScript.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\JavaScript.js",
+              "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\wwwroot\\js\\JavaScript.js",
+              "RelativeToolTip": "wwwroot\\js\\JavaScript.js",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwBcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-03-29T09:03:41.4Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAAIwCEAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T09:03:12.303Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

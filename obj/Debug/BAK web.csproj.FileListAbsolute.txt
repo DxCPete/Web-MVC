@@ -1,0 +1,86 @@
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\BAK web.dll.config
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\BAK web.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\BAK web.pdb
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\csc.exe
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\csc.exe.config
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\csc.rsp
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\csi.exe
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\csi.exe.config
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\csi.rsp
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.AppContext.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Console.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.IO.Compression.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Net.Http.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Net.Sockets.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.ValueTuple.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Xml.XPath.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\vbc.exe
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\vbc.exe.config
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\vbc.rsp
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\VBCSCompiler.exe
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\Antlr3.Runtime.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\Newtonsoft.Json.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Helpers.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Mvc.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Optimization.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Razor.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.WebPages.Deployment.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.WebPages.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.WebPages.Razor.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\WebGrease.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Helpers.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Mvc.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Optimization.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.Razor.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.WebPages.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.WebPages.Deployment.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\System.Web.WebPages.Razor.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\Newtonsoft.Json.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\Antlr3.Runtime.pdb
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\cs\System.Web.Helpers.resources.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\cs\System.Web.Mvc.resources.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\cs\System.Web.Optimization.resources.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\cs\System.Web.Razor.resources.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\cs\System.Web.WebPages.resources.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\cs\System.Web.WebPages.Deployment.resources.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\bin\cs\System.Web.WebPages.Razor.resources.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\obj\Debug\BAK web.csproj.CoreCompileInputs.cache
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\obj\Debug\BAK web.csproj.CopyComplete
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\obj\Debug\BAK web.dll
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\obj\Debug\BAK web.pdb
+C:\Users\petro\OneDrive\Desktop\BAK WEB C#\BAK web\obj\Debug\BAK web.csproj.AssemblyReference.cache

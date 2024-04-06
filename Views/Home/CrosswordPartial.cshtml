@@ -1,0 +1,44 @@
+﻿@using BAK_web.Models
+@model CrosswordBritish
+@{
+    string[] legendsHorizontal = new string[0];
+    string[] legendsVertical = new string[0];
+}
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="~/wwwroot/css/style.css" type="text/css" />
+    <script src="~/wwwroot/js/JavaScript.js"></script>
+    <title>Crossword</title>
+</head>
+
+
+
+
+<div class="crossword">
+    @for (int x = 0; x < Model.width; x++)
+    {
+        <div class="row">
+            @for (int y = 0; y < Model.height; y++)
+            {
+                <div class="cell" data-row="@x" data-col="@y"></div>
+            }
+        </div>
+    }
+</div>
+
+
+<div id="legendsHorizontalContainer">
+    @for (int i = 0; i < legendsHorizontal.Length; i++)
+    {
+        @legendsHorizontal[i];
+        
+    }
+</div>
+<div id="legendsVerticalContainer">
+    @for (int i = 0; i < legendsVertical.Length; i++)
+    {
+        @legendsVertical[i];
+        
+    }
+</div>
