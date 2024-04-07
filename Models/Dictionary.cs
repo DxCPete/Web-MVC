@@ -9,11 +9,12 @@ namespace BAK_web.Models
     public class Dictionary
     {
 
-        public List<Word> wordsList { get; set; } = new List<Word>();
+        public List<Word> wordsList /*{ get; set; }*/ = new List<Word>();
         public bool languageCzech { get; set; } = true;
         public int difficulty { get; set; } = 1;
         private WordComparer comparer { get; } = new WordComparer();
-        static string currentDirectory = Path.GetFullPath("C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\"); 
+        //static string currentDirectory = System.Environment.CurrentDirectory;
+        static string currentDirectory = Path.GetFullPath("C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\"); //je to jinej projekt
         private string conStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + currentDirectory + "Directory.mdf\";Integrated Security=True"; //bude potřeba změnit, když přesunu soubor
         int limit = 150;
         Dictionary<char, int> indexes; //propably wont be used
@@ -148,7 +149,7 @@ namespace BAK_web.Models
             Word word = new Word(lettersContained, "");
             List<Word> wordsFiltered = wordsList.Except(usedWords)
                 .AsParallel()
-                .Where(w => comparer.Equals(w, word) && w.word.Length < maxLength && w.word.Length > 2).Take(limit) //limit
+                .Where(w => comparer.Equals(w, word) && w.word.Length < maxLength && w.word.Length > 2).Take(20) //limit
                 .ToList();
             if (wordsFiltered.Count == 0)
             {
@@ -190,15 +191,15 @@ namespace BAK_web.Models
         }
 
 
-        /*  public bool ImpossibleToSelect(string[] wordContains) 
-          {
-              Word w = new Word(string.Concat(wordContains), "");
-              Random rnd = new Random();
-              List<Word> wordsFiltered = wordsList.Where(word => comparer.Contains(word, wordContains))
-                  .Take(1)
-                  .ToList();
-              return (wordsFiltered.Count == 0);
-          }*/
+      /*  public bool ImpossibleToSelect(string[] wordContains) 
+        {
+            Word w = new Word(string.Concat(wordContains), "");
+            Random rnd = new Random();
+            List<Word> wordsFiltered = wordsList.Where(word => comparer.Contains(word, wordContains))
+                .Take(1)
+                .ToList();
+            return (wordsFiltered.Count == 0);
+        }*/
 
         public bool ImpossibleToSelectEquals(string[] wordContains)
         {
@@ -294,13 +295,13 @@ namespace BAK_web.Models
             return longestWord;
         }
 
-        public void VypsatSlovnik()
+       /* public void VypsatSlovnik()
         {
             foreach (Word s in wordsList)
             {
                 s.Print();
             }
-        }
+        }*/
 
         internal bool Any(Func<object, bool> p)
         {

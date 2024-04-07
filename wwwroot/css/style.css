@@ -16,7 +16,6 @@ button {
     display: grid;
     grid-template-columns: repeat(calc(100% / var(--columns)), 1fr);
     grid-template-rows: repeat(var(--rows), 1fr);
-    background-color: deeppink;
 }
 
 .row {

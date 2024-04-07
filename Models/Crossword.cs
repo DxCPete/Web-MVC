@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Net.Http;
 
 namespace BAK_web.Models
 {
@@ -15,7 +14,7 @@ namespace BAK_web.Models
         public int width { get; set; }
         public int height { get; set; }
         public Dictionary dictionary;
-        public List<Word> usedWords = new List<Word>();
+        public List<Word> usedWords  = new List<Word>();
         public string language { get; set; }
         public int difficulty { get; set; }
         public List<(string[] containedLetters, bool horizontalDirection)>[][] impossiblePathsList;
@@ -29,7 +28,6 @@ namespace BAK_web.Models
 
             this.width = width;
             this.height = height;
-            dictionary = new Dictionary(Math.Max(width, height) - 1);
 
             impossiblePathsList = new List<(string[] containedLetters, bool horizontalDirection)>[width][];
             for (int i = 0; i < width; i++)

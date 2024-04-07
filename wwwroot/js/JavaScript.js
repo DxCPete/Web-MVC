@@ -26,42 +26,42 @@
 
 
     // začne generovat křížovku a zapíše jí do vytvořené mřížky
-    if (true) {
-        $.ajax({
-            url: "/Home/Generate",
-            type: "POST",
-            data: { width: width, height: height },
-            success: function (response) {
-                const data = response.crossword;
-                const legendsHor = response.legendsHorizontal;
-                const legendsVer = response.legendsVertical;
-                console.log(legendsHor);
-                console.log(legendsVer);
-                //printLegends(legendsHor, legendsVer);
+
+ 
+
+     $.ajax({
+        url: "/Home/Generate",
+        type: "POST",
+        timeout: 999999999,
+        data: { width: width, height: height, british: false },
+        success: function (response) {
+            const data = response.crossword;
+            const legendsHor = response.legendsHorizontal;
+            const legendsVer = response.legendsVertical;
+            console.log(legendsHor);
+            console.log(legendsVer);
+            //printLegends(legendsHor, legendsVer);
 
 
-                var index = 0;
-                for (let i = 0; i < height; i++) {
-                    for (let j = 0; j < width; j++) {
-                        const cellContent = data[index];
-                        console.log(cellContent);
-                        index++;
-                        if (cellContent != " " && cellContent != null) {
-                            setCellContent(cellContent, j, i);
-                        }
+            var index = 0;
+            for (let i = 0; i < height; i++) {
+                for (let j = 0; j < width; j++) {
+                    const cellContent = data[index];
+                    index++;
+                    if (cellContent != " " && cellContent != null) {
+                        setCellContent(cellContent, i, j);
                     }
                 }
-                /* document.getElementsByName("legendsHorizontal")[0].value = legendsHor;
-                 document.getElementsByName("legendsVertical")[0].value = legendsVer;*/
-
             }
-        });
-    }
+            /*document.getElementsByName("legendsHorizontal")[0].value = legendsHor;
+            document.getElementsByName("legendsVertical")[0].value = legendsVer;
+            */
+        }
+    });
+
 }
 
-
 function setCellContent(content, x, y) {
-    console.log(content + " " + x + " " + y)
     const cell = document.querySelector('[data-row="' + y + '"][data-col="' + x + '"]');
     cell.textContent = content;
 }

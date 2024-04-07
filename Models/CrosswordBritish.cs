@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace BAK_web.Models
 {
-    public class CrosswordBritish : Crossword
+    class CrosswordBritish : Crossword
     {
         double bestScore = 0.0;
         double lastScore = 0.0;
@@ -18,6 +18,7 @@ namespace BAK_web.Models
 
         public override void Generate()
         {
+            dictionary = new Dictionary(Math.Max(width, height) - 1);
             SetMinimumRequiredScore();
             string[,] cs = new string[this.width, this.height];
             for (int i = 0; i < height; i++)
