@@ -14,8 +14,9 @@ namespace BAK_web.Models
         public int difficulty { get; set; } = 1;
         private WordComparer comparer { get; } = new WordComparer();
         //static string currentDirectory = System.Environment.CurrentDirectory;
+        static string basePath = AppDomain.CurrentDomain.BaseDirectory + "Models\\";
         static string currentDirectory = Path.GetFullPath("C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Models\\"); //je to jinej projekt
-        private string conStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + currentDirectory + "Directory.mdf\";Integrated Security=True"; //bude potřeba změnit, když přesunu soubor
+        private string conStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + basePath + "Directory.mdf\";Integrated Security=True"; //bude potřeba změnit, když přesunu soubor
         int limit = 150;
         Dictionary<char, int> indexes; //propably wont be used
 
