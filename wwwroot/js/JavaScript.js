@@ -27,19 +27,20 @@
 
     // začne generovat křížovku a zapíše jí do vytvořené mřížky
 
- 
 
-     $.ajax({
+
+    $.ajax({
         url: "/Home/Generate",
         type: "POST",
         timeout: 999999999,
         data: { width: width, height: height, british: false },
         success: function (response) {
             const data = response.crossword;
-            const legendsHor = response.legendsHorizontal;
-            const legendsVer = response.legendsVertical;
-            console.log(legendsHor);
-            console.log(legendsVer);
+            /* 
+             const legendsHor = response.legendsHorizontal;
+             const legendsVer = response.legendsVertical;
+             console.log(legendsHor);
+             console.log(legendsVer);*/
             //printLegends(legendsHor, legendsVer);
 
 

@@ -38,6 +38,15 @@ namespace BAK_web.Controllers
 
         public ActionResult Generate(int width, int height, bool british)
         {
+            /*Crossword crossword;
+            if (british)
+            {
+                crossword = new CrosswordBritish(width, height);
+            }
+            else
+            {
+                crossword = new CrosswordSw(width, height);
+            }*/
             Crossword crossword = new CrosswordBritish(width, height);
             return Json(crossword);
         }

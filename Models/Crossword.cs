@@ -13,12 +13,12 @@ namespace BAK_web.Models
         public string[,] crossword { get; set; }
         public int width { get; set; }
         public int height { get; set; }
-        public Dictionary dictionary;
+        protected Dictionary dictionary;
         public List<Word> usedWords  = new List<Word>();
-        public string language { get; set; }
-        public int difficulty { get; set; }
-        public List<(string[] containedLetters, bool horizontalDirection)>[][] impossiblePathsList;
-        public string emptyField = " ";
+        protected string language { get; set; }
+        protected int difficulty { get; set; }
+        protected List<(string[] containedLetters, bool horizontalDirection)>[][] impossiblePathsList;
+        protected string emptyField = " ";
 
 
         public Crossword(int width, int height)   //pak přidat jazyk

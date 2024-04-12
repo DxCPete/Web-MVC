@@ -13,15 +13,15 @@ namespace BAK_web.Models
 {
     class CrosswordSw : Crossword
     {
-        string clueSymbol = "7";
-        string clue = "clue";
-        string[] cs;
-        Stack<(string[], List<Word>)> stack = new Stack<(string[], List<Word>)>();
+        private string clueSymbol = "7";
+        private string clue = "clue";
+        private string[] cs;
+        private Stack<(string[], List<Word>)> stack = new Stack<(string[], List<Word>)>();
 
-        int longestWordLength = 0;
-        int pocetNesplnitelnychCest = 0;
+        private int longestWordLength = 0;
+        private int pocetNesplnitelnychCest = 0;
 
-        (int, int, bool) lastDeadEndedCoordinates = (0, 0, false);
+        private (int, int, bool) lastDeadEndedCoordinates = (0, 0, false);
 
         public CrosswordSw(int x, int y) : base(x, y)
         {
