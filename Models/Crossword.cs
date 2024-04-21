@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 
 namespace BAK_web.Models
 {
@@ -14,20 +11,24 @@ namespace BAK_web.Models
         public int width { get; set; }
         public int height { get; set; }
         protected Dictionary dictionary;
-        public List<Word> usedWords  = new List<Word>();
-        protected string language { get; set; }
-        protected int difficulty { get; set; }
+        public List<Word> usedWords = new List<Word>();
+        public bool isCzechLanguage { get; set; }
+        public int difficulty { get; set; }
         protected List<(string[] containedLetters, bool horizontalDirection)>[][] impossiblePathsList;
         protected string emptyField = " ";
+        protected static string chPlaceholder = "6";
+        protected string regexString = @"[\p{Lu}\p{L}ÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ" + chPlaceholder + "]";
 
 
-        public Crossword(int width, int height)   //pak přidat jazyk
+        public Crossword(int width, int height, bool isCzechLanguage)   //pak přidat jazyk
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
             this.width = width;
             this.height = height;
+            this.isCzechLanguage = isCzechLanguage;
+            dictionary = new Dictionary(Math.Max(width, height) - 1, isCzechLanguage, difficulty);
 
             impossiblePathsList = new List<(string[] containedLetters, bool horizontalDirection)>[width][];
             for (int i = 0; i < width; i++)
@@ -48,6 +49,11 @@ namespace BAK_web.Models
                 }
             }
             Generate();
+            if (true)
+            {
+                LetterCh();
+            }
+
             Print();
             stopwatch.Stop();
 
@@ -57,40 +63,7 @@ namespace BAK_web.Models
 
         public virtual string[] ContainedLetters(int x, int y, bool horintalDirection, int maxLength)
         {
-            string[] pismena = new string[maxLength];
-            int i = 0;
-            Regex regex = new Regex(@"[\p{Lu}\p{L}ÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ]");
-            if (horintalDirection)
-            {
-                while (i < maxLength)
-                {
-                    if (regex.IsMatch(crossword[x + i, y]))
-                    {
-                        pismena[i] = crossword[x + i, y];
-                    }
-                    else
-                    {
-                        pismena[i] = "_";
-                    }
-                    i += 1;
-                }
-            }
-            else
-            {
-                while (i < maxLength)
-                {
-                    if (regex.IsMatch(crossword[x, y + i]))
-                    {
-                        pismena[i] = crossword[x, y + i];
-                    }
-                    else
-                    {
-                        pismena[i] = "_";
-                    }
-                    i += 1;
-                }
-            }
-            return pismena;
+            return null;
         }
 
         public virtual int MaxLength(int x, int y, bool horintalDirection)
@@ -116,6 +89,20 @@ namespace BAK_web.Models
                 else
                 {
                     crossword[x, y] = "7/7";
+                }
+            }
+        }
+
+        public void LetterCh()
+        {
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    if (crossword[x, y] == chPlaceholder)
+                    {
+                        crossword[x, y] = "CH";
+                    }
                 }
             }
         }

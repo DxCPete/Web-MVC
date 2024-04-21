@@ -3,7 +3,8 @@
     var width = parseInt(x);
     var y = prompt("Zadej druhé číslo:", "");
     var height = parseInt(y);
-    //    console.log(x + "   " y);
+    //typ křížovky 
+    var isBritish = false;
     if (height > 0 && width > 0) {
         document.documentElement.style.setProperty('--rows', x);
         document.documentElement.style.setProperty('--columns', y);
@@ -19,7 +20,6 @@
         type: "GET",
         data: { width: width, height: height },
         success: function (result) {
-            // Výsledek je zde zobrazen v divu s id "crosswordResult"
             $("#crosswordResult").html(result);
         }
     });
@@ -32,16 +32,17 @@
     $.ajax({
         url: "/Home/Generate",
         type: "POST",
-        timeout: 999999999,
         data: { width: width, height: height, british: false },
         success: function (response) {
+            GenerateGrid();
             const data = response.crossword;
-            /* 
-             const legendsHor = response.legendsHorizontal;
-             const legendsVer = response.legendsVertical;
-             console.log(legendsHor);
-             console.log(legendsVer);*/
-            //printLegends(legendsHor, legendsVer);
+            if (isBritish) {
+                const legendsHor = response.cluesHorizontal;
+                const legendsVer = response.cluesVertical;
+                console.log(legendsHor);
+                console.log(legendsVer);
+                printLegends(legendsHor, legendsVer);
+            }
 
 
             var index = 0;
@@ -54,11 +55,12 @@
                     }
                 }
             }
-            /*document.getElementsByName("legendsHorizontal")[0].value = legendsHor;
-            document.getElementsByName("legendsVertical")[0].value = legendsVer;
-            */
         }
     });
+
+}
+
+function GenerateGrid() {
 
 }
 
@@ -67,26 +69,28 @@ function setCellContent(content, x, y) {
     cell.textContent = content;
 }
 
-function printLegends(legendsHor, legendsVer) {
+function setCellBackgroundCollor(color, x, y) {
+    const cell = document.querySelector('[data-row="' + y + '"][data-col="' + x + '"]');
+    cell.style.backgroundColor = color;
+}
+
+function printLegends(cluesHor, cluesVer) {
 
     const ulHor = document.createElement('ul');
     var i = 0;
-    while (legendsHor[i] !== null) {
-        console.log(i);
+    for (var i = 0; i < cluesHor.length; i++) {
         const li = document.createElement('li');
-        const text = document.createTextNode(legendsHor[i].legend);
+        const text = document.createTextNode((i+1) + " " + cluesHor[i]);
         li.appendChild(text);
         ulHor.appendChild(li);
-        i++;
     }
     const ulVer = document.createElement('ul');
-    var j = 0;
-    while (legendsVer[j] !== null) {
+
+    for (var i = 0; i < cluesVer.length; i++) {
         const li = document.createElement('li');
-        const text = document.createTextNode(legendsVer[j].legend);
+        const text = document.createTextNode((i+1) + " " + cluesVer[i]);
         li.appendChild(text);
         ulVer.appendChild(li);
-        j++;
     }
 
     document.getElementById('legendsHorizontalContainer').appendChild(ulHor);

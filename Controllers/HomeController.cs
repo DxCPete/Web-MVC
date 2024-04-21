@@ -31,7 +31,7 @@ namespace BAK_web.Controllers
 
         public ActionResult GenerateCrossword(int width, int height)
         {
-            Crossword crossword = new Crossword(width, height);
+            Crossword crossword = new Crossword(width, height,true);
             ViewBag.canGenerate = true;
             return PartialView("CrosswordPartial", crossword);
         }
@@ -47,7 +47,8 @@ namespace BAK_web.Controllers
             {
                 crossword = new CrosswordSw(width, height);
             }*/
-            Crossword crossword = new CrosswordBritish(width, height);
+            Crossword crossword = new CrosswordSw(width, height, british);
+            
             return Json(crossword);
         }
 
