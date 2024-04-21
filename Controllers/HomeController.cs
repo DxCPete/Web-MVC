@@ -31,24 +31,22 @@ namespace BAK_web.Controllers
 
         public ActionResult GenerateCrossword(int width, int height)
         {
-            Crossword crossword = new Crossword(width, height,true);
+            Crossword crossword = new Crossword(width, height, true);
             ViewBag.canGenerate = true;
             return PartialView("CrosswordPartial", crossword);
         }
 
-        public ActionResult Generate(int width, int height, bool british)
+        public ActionResult Generate(int width, int height, bool isBritish, bool isCzechLanguage)
         {
-            /*Crossword crossword;
-            if (british)
+            Crossword crossword;
+            if (isBritish)
             {
-                crossword = new CrosswordBritish(width, height);
+                crossword = new CrosswordBritish(width, height, isCzechLanguage);
             }
             else
             {
-                crossword = new CrosswordSw(width, height);
-            }*/
-            Crossword crossword = new CrosswordSw(width, height, british);
-            
+                crossword = new CrosswordSw(width, height, isCzechLanguage);
+            }
             return Json(crossword);
         }
 

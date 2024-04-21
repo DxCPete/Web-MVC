@@ -935,7 +935,7 @@ namespace BAK_web.Models
 
         void PrintCs(string[] cs)
         {
-              StringBuilder sb = new StringBuilder();
+             /* StringBuilder sb = new StringBuilder();
               for (int y = 0; y < height; y += 1)
               {
                   for (int x = 0; x < width; x += 1)
@@ -945,12 +945,12 @@ namespace BAK_web.Models
 
                   sb.AppendLine();
               }
-              Console.WriteLine(sb.ToString());
+              Console.WriteLine(sb.ToString());*/
         }
 
         public void PrintMainCs()
         {
-            StringBuilder sb = new StringBuilder();
+           /* StringBuilder sb = new StringBuilder();
             for (int y = 0; y < height; y += 1)
             {
                 for (int x = 0; x < width; x += 1)
@@ -960,7 +960,7 @@ namespace BAK_web.Models
 
                 sb.AppendLine();
             }
-            Console.WriteLine(sb.ToString());
+            Console.WriteLine(sb.ToString());*/
         }
 
         void FirstLines(WeightedRNG rng)

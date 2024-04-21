@@ -16,10 +16,10 @@
 
 
 <div class="crossword">
-    @for (int x = 0; x < Model.width; x++)
+    @for (int y = 0; y < Model.height; y++)
     {
         <div class="row">
-            @for (int y = 0; y < Model.height; y++)
+            @for (int x = 0; x < Model.width; x++)
             {
                 <div class="cell" data-row="@x" data-col="@y"></div>
             }
