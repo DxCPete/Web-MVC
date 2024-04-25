@@ -1,14 +1,17 @@
-﻿function settingVariables() {
-    var x = prompt("Zadej první číslo:", "");
+﻿var emptyField = " ";
+function settingVariables() {
+    var x = 15; //prompt("Zadej první číslo:", "");
     var width = parseInt(x);
-    var y = prompt("Zadej druhé číslo:", "");
+    var y = 15;// prompt("Zadej druhé číslo:", "");
     var height = parseInt(y);
     //typ křížovky 
-    var isBritish = true;
+    console.log("Start");
+    var isBritish = false;
     var isCzechLanguage = true;
     if (height > 0 && width > 0) {
         document.documentElement.style.setProperty('--rows', x);
         document.documentElement.style.setProperty('--columns', y);
+        document.documentElement.style.setProperty('--max-table-height', (y * 75) + "px");
     }
     else {
         console.error("Chybně zadané vstupní hodnoty!");
@@ -29,7 +32,7 @@
                 cluesVertical = response.cluesVertical;
                 console.log(cluesHorizontal);
                 console.log(cluesVertical);
-                printLegends(cluesHorizontal, cluesVertical);
+                printLegends(cluesHorizontal, cluesVertical, isCzechLanguage);
             }
 
             var index = 0;
@@ -42,7 +45,6 @@
                         if (cellContent.length < 3) {
                             setCellContent(cellContent, x, y);
                             allowEditting(x, y);
-                            lockMaxInputLength(x, y);
                         } else {
                             clueCell(cellContent, x, y);
                             //setCellContent(cellContent, x, y);
@@ -52,13 +54,62 @@
             }
             if (!isBritish) {
                 // clueCells(data, width, height);
-                SecretCells(data, width, height, isCzechLanguage);
+                CellsWithSecret(data, width, height, isCzechLanguage);
+            } else {
+                setCluesIndexes(data, width, height);
             }
+
         }
     });
 }
 
-function SecretCells(data, width, height, isCzechLanguage) {
+function setCluesIndexes(data, width, height) {
+    var indexHor = 1;
+    var indexVer = 1;
+    for (var y = 0; y < height; y++) {
+        for (var x = 0; x < width; x++) {
+            if (data[x * height + y] == emptyField) continue;
+            if (x > 0 && x + 1 < width && data[(x - 1) * height + y] == emptyField && data[(x + 1) * height + y] != emptyField) {
+                console.log(x + " " + y + " " + indexHor);
+                setClueIndex(x, y, indexHor);
+                indexHor++;
+            }
+            if (x == 0 && data[(x + 1) * height + y] != emptyField) {
+                console.log(x + " " + y + " " + indexHor);
+                setClueIndex(x, y, indexHor);
+                indexHor++;
+            }
+
+            if (y > 0 && y + 1 < height && data[x * height + y - 1] == emptyField && data[x * height + y + 1] != emptyField) {
+                console.log(x + " " + y + " " + indexVer);
+                setClueIndex(x, y, indexVer);
+                indexVer++;
+            }
+
+            if (y == 0 && data[x * height + y + 1] != emptyField) {
+                console.log(x + " " + y + " " + indexVer);
+                setClueIndex(x, y, indexVer);
+                indexVer++;
+            }
+        }
+    }
+}
+
+function setClueIndex(x, y, index) {
+    const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
+    const existingIndex = cell.querySelector('.clue-index');
+    if (!existingIndex) {
+        const indexEl = document.createElement('span');
+        indexEl.classList.add("clue-index");
+        indexEl.textContent = index;
+        cell.appendChild(indexEl);
+    }
+    else {
+        existingIndex.textContent = existingIndex.textContent + ", " + index;
+    }
+}
+
+function CellsWithSecret(data, width, height, isCzechLanguage) {
     var index = 0;
     for (let y = 0; y < height; y++) {
         for (let x = 0; x < width; x++) {
@@ -114,6 +165,7 @@ function allowEditting(x, y) {
     const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
     cell.setAttribute("id", "editableDiv");
     cell.contentEditable = "true";
+    lockMaxInputLength(x, y);
 }
 
 //vytvoření mřížky na webu
@@ -138,18 +190,27 @@ function setCellBackgroundCollor(color, x, y) {
     cell.style.backgroundColor = color;
 }
 
-function printLegends(cluesHor, cluesVer) {
+function printLegends(cluesHor, cluesVer, isCzechLanguage) {
 
     const ulHor = document.createElement('ul');
+    var cluesTextHor = "Clues horizontal: ";
+    if (isCzechLanguage) {
+        cluesTextHor = "Legendy vodorovné: ";
+    }
+    var cluesTextVer = "Clues vertical: ";
+    if (isCzechLanguage) {
+        cluesTextVer = "Legendy svislé: ";
+    }
+    ulHor.textContent = cluesTextHor;
     var i = 0;
     for (var i = 0; i < cluesHor.length; i++) {
         const li = document.createElement('li');
         const text = document.createTextNode((i + 1) + " " + cluesHor[i]);
         li.appendChild(text);
         ulHor.appendChild(li);
-        console.log(text);
     }
     const ulVer = document.createElement('ul');
+    ulVer.textContent = cluesTextVer;
 
     for (var i = 0; i < cluesVer.length; i++) {
         const li = document.createElement('li');

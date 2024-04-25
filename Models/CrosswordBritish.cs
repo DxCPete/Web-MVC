@@ -408,22 +408,42 @@ namespace BAK_web.Models
         {
             List<Word> cluesHorizontal = new List<Word>();
             List<Word> cluesVertical = new List<Word>();
-            bool horizontalDir = true;
             Word word;
-            for (int j = 0; j < height; j++)
+            for (int y = 0; y < height; y++)
             {
-                for (int i = 0; i < width; i++)
+                for (int x = 0; x < width; x++)
                 {
-                    for (int d = 0; d < 2; d++)
+                    if (crossword[x, y] == emptyField) continue;
+                    if (x > 0 && x + 1 < width && crossword[x - 1, y] == emptyField && crossword[x + 1, y] != emptyField)
                     {
-                        horizontalDir = !horizontalDir;
-                        word = FindWord(i, j, horizontalDir);
-                        if (word.word.Equals("")) continue;
-                        if (horizontalDir)
+                        word = FindWord(x, y, true);
+                        if (!word.word.Equals(""))
                         {
                             cluesHorizontal.Add(word);
                         }
-                        else
+                    }
+                    if (x == 0 && crossword[x + 1, y] != emptyField)
+                    {
+                        word = FindWord(x, y, true);
+                        if (!word.word.Equals(""))
+                        {
+                            cluesHorizontal.Add(word);
+                        }
+                    }
+
+                    if (y > 0 && y + 1 < height && crossword[x, y - 1] == emptyField && crossword[x, y + 1] != emptyField)
+                    {
+                        word = FindWord(x, y, false);
+                        if (!word.word.Equals(""))
+                        {
+                            cluesVertical.Add(word);
+                        }
+                    }
+
+                    if (y == 0 && crossword[x, y + 1] != emptyField)
+                    {
+                        word = FindWord(x, y, false);
+                        if (!word.word.Equals(""))
                         {
                             cluesVertical.Add(word);
                         }
@@ -453,6 +473,10 @@ namespace BAK_web.Models
                     y++;
                 }
 
+            }
+            if (isCzechLanguage && letters.Contains("CH"))
+            {
+                letters = letters.Replace("CH", chPlaceholder);
             }
             Word word = dictionary.GetRightClue(this.usedWords, letters.ToCharArray().Select(c => c.ToString()).ToArray());
             return word;

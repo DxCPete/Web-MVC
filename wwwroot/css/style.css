@@ -1,6 +1,7 @@
 ﻿:root {
     --rows: 0;
     --columns: 0;
+    --max-table-height: 1;
 }
 
 body {
@@ -10,6 +11,12 @@ body {
 button {
     padding: var(--rows);
     margin: 1vw;
+}
+
+.crosswordResult {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
 }
 
 .crossword {
@@ -23,6 +30,7 @@ button {
 }
 
 .cell {
+    position: relative;
     width: 75px;
     height: 75px;
     display: flex;
@@ -37,7 +45,6 @@ button {
     font-size: 12px;
     text-align: center;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .cell.cell-clue {
@@ -64,12 +71,12 @@ input.cell {
 }
 
 table {
-    width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
     margin: 0;
     padding: 0;
     border-spacing: 0;
+    max-height: var(--max-table-height);
 }
 
 li {
@@ -85,8 +92,6 @@ li {
 }
 
 .upper-part, .bottom-part {
-    overflow: hidden;
-    text-overflow: ellipsis;
     flex: 1;
 }
 
@@ -94,21 +99,13 @@ li {
     border-bottom: 1px solid;
 }
 
-.cluesHorizontalContainer {
-    padding-top: 0;
-    margin-top: 0;
+.clues {
+    font-size: 24px;
 }
 
-.crosswordResult {
-    padding-bottom: 0;
-    margin: 0;
-}
-
-.crossword {
-    padding-bottom: 0;
-    margin: 0;
-}
-
-th, td {
-    padding: 0;
+.clue-index {
+    position: absolute;
+    top: 2px; 
+    left: 2px; 
+    font-size: 14px; 
 }
