@@ -33,18 +33,22 @@ button {
     border: 1px solid black;
 }
 
-    .cell.cell-clue {
-        font-size: 12px;
-        text-align: center;
-        overflow: auto;
-    }
+.cell-clue {
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
-    .cell.cell-secret {
-        background-color: yellow;
-    }
+.cell.cell-clue {
+    font-size: 12px;
+    text-align: center;
+}
 
-    .cell.cell-secret-clue {
-    }
+.cell.cell-secret {
+    background-color: yellow;
+}
+
 
 input.cell:focus {
     outline: none;
@@ -59,6 +63,52 @@ input.cell {
     background: transparent;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin: 0;
+    padding: 0;
+    border-spacing: 0;
+}
+
 li {
     list-style: none;
+}
+
+.both-directions-clue {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.upper-part, .bottom-part {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+}
+
+.upper-part {
+    border-bottom: 1px solid;
+}
+
+.cluesHorizontalContainer {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.crosswordResult {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+.crossword {
+    padding-bottom: 0;
+    margin: 0;
+}
+
+th, td {
+    padding: 0;
 }

@@ -15,30 +15,17 @@
 
 
 
-<div class="crossword">
+<table class="crossword">
     @for (int y = 0; y < Model.height; y++)
     {
-        <div class="row">
+        <tr class="row">
             @for (int x = 0; x < Model.width; x++)
             {
-                <div class="cell" data-row="@x" data-col="@y"></div>
+                <td class="cell" data-row="@x" data-col="@y"></td>
             }
-        </div>
+        </tr>
     }
-</div>
+</table>
 
-
-<div id="legendsHorizontalContainer">
-    @for (int i = 0; i < legendsHorizontal.Length; i++)
-    {
-        @legendsHorizontal[i];
-
-    }
-</div>
-<div id="legendsVerticalContainer">
-    @for (int i = 0; i < legendsVertical.Length; i++)
-    {
-        @legendsVertical[i];
-        
-    }
-</div>
+<div id="cluesHorizontalContainer"></div>
+<div id="cluesVerticalContainer"></div>
