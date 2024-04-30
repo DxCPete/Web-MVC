@@ -6,12 +6,12 @@ function settingVariables() {
     var height = parseInt(y);
     //typ křížovky 
     console.log("Start");
-    var isBritish = false;
+    var isBritish = true;
     var isCzechLanguage = true;
     if (height > 0 && width > 0) {
         document.documentElement.style.setProperty('--rows', x);
         document.documentElement.style.setProperty('--columns', y);
-        document.documentElement.style.setProperty('--max-table-height', (y * 75) + "px");
+        document.documentElement.style.setProperty('--max-table-height', (y * 80) + "px");
     }
     else {
         console.error("Chybně zadané vstupní hodnoty!");
@@ -30,8 +30,6 @@ function settingVariables() {
             if (isBritish) {
                 cluesHorizontal = response.cluesHorizontal;
                 cluesVertical = response.cluesVertical;
-                console.log(cluesHorizontal);
-                console.log(cluesVertical);
                 printLegends(cluesHorizontal, cluesVertical, isCzechLanguage);
             }
 
@@ -41,26 +39,37 @@ function settingVariables() {
                     const cellContent = data[x * height + y];
                     index++;
                     if (cellContent != null) {
-                        //setCellContent(cellContent, x, y);
                         if (cellContent.length < 3) {
-                            setCellContent(cellContent, x, y);
-                            allowEditting(x, y);
+                            if (cellContent != emptyField) {
+                                letter(x, y);
+                                setCellContent(cellContent, x, y);
+                                lockMaxInputLength(x, y, isCzechLanguage);
+
+                            } else if (isBritish) {
+                                setCellBackgroundCollor("black", x, y);
+
+                            }
                         } else {
                             clueCell(cellContent, x, y);
-                            //setCellContent(cellContent, x, y);
                         }
                     }
                 }
             }
-            if (!isBritish) {
-                // clueCells(data, width, height);
-                CellsWithSecret(data, width, height, isCzechLanguage);
-            } else {
+            if (isBritish) {
                 setCluesIndexes(data, width, height);
+            } else {
+                CellsWithSecret(data, width, height, isCzechLanguage);
             }
 
         }
     });
+}
+
+function letter(x, y) {
+    const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
+    const textArea = document.createElement('textarea');
+    textArea.classList.add("letter");
+    cell.appendChild(textArea);
 }
 
 function setCluesIndexes(data, width, height) {
@@ -70,24 +79,20 @@ function setCluesIndexes(data, width, height) {
         for (var x = 0; x < width; x++) {
             if (data[x * height + y] == emptyField) continue;
             if (x > 0 && x + 1 < width && data[(x - 1) * height + y] == emptyField && data[(x + 1) * height + y] != emptyField) {
-                console.log(x + " " + y + " " + indexHor);
                 setClueIndex(x, y, indexHor);
                 indexHor++;
             }
             if (x == 0 && data[(x + 1) * height + y] != emptyField) {
-                console.log(x + " " + y + " " + indexHor);
                 setClueIndex(x, y, indexHor);
                 indexHor++;
             }
 
             if (y > 0 && y + 1 < height && data[x * height + y - 1] == emptyField && data[x * height + y + 1] != emptyField) {
-                console.log(x + " " + y + " " + indexVer);
                 setClueIndex(x, y, indexVer);
                 indexVer++;
             }
 
             if (y == 0 && data[x * height + y + 1] != emptyField) {
-                console.log(x + " " + y + " " + indexVer);
                 setClueIndex(x, y, indexVer);
                 indexVer++;
             }
@@ -102,6 +107,7 @@ function setClueIndex(x, y, index) {
         const indexEl = document.createElement('span');
         indexEl.classList.add("clue-index");
         indexEl.textContent = index;
+        indexEl.contentEditable = false;
         cell.appendChild(indexEl);
     }
     else {
@@ -114,7 +120,7 @@ function CellsWithSecret(data, width, height, isCzechLanguage) {
     for (let y = 0; y < height; y++) {
         for (let x = 0; x < width; x++) {
             const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
-            var content = cell.textContent; //data[x * height + y];
+            var content = cell.textContent; 
             if (content.includes("TAJENKA 1") || content.includes("TAJENKA 2") ||
                 content.includes("SECRET 1") || content.includes("SECRET 2")) {
                 var i = 1;
@@ -146,26 +152,11 @@ function clueCell(content, x, y) {
 }
 
 
-function clueCells(width, height) {
-    var index = 0;
-    for (let y = 0; y < height; y++) {
-        for (let x = 0; x < width; x++) {
-            const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
-            var content = cell.textContent;
-            if (content.length > 2) {
-                cell.classList.add("cell-clue");
-                insertDivider(content, x, y);
-            }
-
-        }
-    }
-}
-
 function allowEditting(x, y) {
     const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
     cell.setAttribute("id", "editableDiv");
-    cell.contentEditable = "true";
-    lockMaxInputLength(x, y);
+    cell.contentEditable = true;
+    lockMaxInputLength(x, y, isCzechLanguage);
 }
 
 //vytvoření mřížky na webu
@@ -182,12 +173,14 @@ function generateGrid(width, height) {
 
 function setCellContent(content, x, y) {
     const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
-    cell.textContent = content;
+    const child = cell.querySelector('textarea');
+    child.textContent = content;
 }
 
 function setCellBackgroundCollor(color, x, y) {
     const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
     cell.style.backgroundColor = color;
+    cell.contentEditable = false;
 }
 
 function printLegends(cluesHor, cluesVer, isCzechLanguage) {
@@ -224,17 +217,15 @@ function printLegends(cluesHor, cluesVer, isCzechLanguage) {
 
 }
 
-function lockMaxInputLength(x, y) {
+function lockMaxInputLength(x, y, isCzechLanguage) {
     const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
-    cell.addEventListener('input', function () {
-        if (this.innerText.length > 2) {
-            this.innerText = this.innerText.substring(0, 2);
-            const range = document.createRange();
-            const sel = window.getSelection();
-            range.selectNodeContents(this);
-            range.collapse(false);
-            sel.removeAllRanges();
-            sel.addRange(range);
+    const child = cell.querySelector('.letter');
+    child.addEventListener('input', () => {
+        var content = child.value.toUpperCase();
+        if (isCzechLanguage && content.startsWith("CH")) {
+            child.value = content.substring(0, 2);
+        } else {
+            child.value = content.substring(0, 1);
         }
     });
 }
@@ -260,5 +251,32 @@ function insertDivider(clue, x, y) {
         bottomPart.className = 'bottom-part';
         bottomPart.textContent = parts[1];
         cell.appendChild(bottomPart);
+    }
+}
+
+
+function printCrossword() {
+    /*var element = document.getElementById('crosswordResult');
+    var printWindow = window.open('', '');
+    //printWindow.document.write('<html><head><title>Tisk</title></head><body>');
+    printWindow.document.write(element.innerHTML);
+    //printWindow.document.write('</body></html>');
+    printWindow.document.close();
+   
+    printWindow.print();
+   */
+    window.print();
+}
+document.addEventListener("focus", function (event) {
+    if (event.target.closest('.crossword')) {
+        lastSelectedElement = event.target;
+    }
+}, true);
+
+function help() {
+    if (lastSelectedElement) {
+        console.log("Vybraný prvek:", lastSelectedElement.textContent);
+    } else {
+        console.log("Žádný prvek není vybrán.");
     }
 }

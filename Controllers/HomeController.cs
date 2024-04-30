@@ -47,7 +47,7 @@ namespace BAK_web.Controllers
             {
                 crossword = new CrosswordSw(width, height, isCzechLanguage);
             }
-          
+
             return Json(crossword);
         }
 

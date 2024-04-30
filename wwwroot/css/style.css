@@ -5,6 +5,7 @@
 }
 
 body {
+    background-color: dimgray;
 }
 
 
@@ -23,6 +24,7 @@ button {
     display: grid;
     grid-template-columns: repeat(calc(100% / var(--columns)), 1fr);
     grid-template-rows: repeat(var(--rows), 1fr);
+    background-color: white;
 }
 
 .row {
@@ -31,8 +33,8 @@ button {
 
 .cell {
     position: relative;
-    width: 75px;
-    height: 75px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,9 +44,11 @@ button {
 }
 
 .cell-clue {
-    font-size: 12px;
+    font-size: 8px;
     text-align: center;
     overflow: hidden;
+    hyphens: auto;
+    overflow-wrap: break-word;
 }
 
 .cell.cell-clue {
@@ -101,11 +105,48 @@ li {
 
 .clues {
     font-size: 24px;
+    flex: 1;
+    width: 50%;
 }
 
 .clue-index {
     position: absolute;
-    top: 2px; 
-    left: 2px; 
-    font-size: 14px; 
+    /*display: inline-block;*/
+    top: 2px;
+    left: 2px;
+    font-size: 14px;
+}
+
+.cluesContainer {
+    margin: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+
+@media print {
+    /*body * {
+        display: none;
+    };*/
+    .dontPrint, button, header {
+        display: none;
+    }
+
+    /*#crosswordResult, .printThis, #testPrint {
+        display: initial;
+    }*/
+}
+
+textarea {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.letter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    resize: none; 
+    border: none;
+    background-color: inherit;
+    text-align: center;
 }

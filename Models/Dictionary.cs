@@ -36,7 +36,8 @@ namespace BAK_web.Models
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                string query = "SELECT * FROM dbo.Secrets;"; // WHERE czechLanguage = " + isCzechLanguage + " AND difficulty = " + difficulty + ";";
+                int czechLanguage = isCzechLanguage ? 1 : 0;
+                string query = "SELECT * FROM dbo.Secrets;";// WHERE czechLanguage = " + czechLanguage + ";"; //+ " AND difficulty = " + difficulty + ";";
 
                 SqlCommand command = new SqlCommand(query, con);
                 SqlDataReader reader = command.ExecuteReader();
@@ -55,8 +56,8 @@ namespace BAK_web.Models
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                int language = isCzechLanguage ? 1 : 0;
-                string query = "SELECT * FROM dbo.Dictionary;"; // WHERE czechLanguage = " + isCzechLanguage + " AND difficulty = " + difficulty + ";";
+                int czechLanguage = isCzechLanguage ? 1 : 0;
+                string query = "SELECT * FROM dbo.Dictionary;";// WHERE czechLanguage = " + czechLanguage + ";" " AND difficulty = " + difficulty + ";";
 
                 SqlCommand command = new SqlCommand(query, con);
                 SqlDataReader reader = command.ExecuteReader();
@@ -69,6 +70,10 @@ namespace BAK_web.Models
                         longestWord = w;
                     }
                     string c = reader["clue"].ToString();
+                    if (c.Length > 23) // todo test
+                    {
+                        continue;
+                    }
                     if (w.Length > maxLength || w.Contains(" ") || w.Contains("-") || w.Contains("/") || w.Contains("-") || w.Contains("+") ||
                         w.Contains("5") || w.Contains("&"))
                     {
