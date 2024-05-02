@@ -17,17 +17,26 @@
 <button onclick="help()">Napověda</button>
 
 
-<table class="crossword">
-    @for (int y = 0; y < Model.height; y++)
-    {
-        <tr class="row">
-            @for (int x = 0; x < Model.width; x++)
-            {
-                <td class="cell" data-row="@x" data-col="@y"></td>
-            }
-        </tr>
-    }
-</table>
+
+<div class="test-container">
+    <div id="loadingIndicator">
+        <div class="spinner"></div>
+        <p>Probíhá zpracování, čekejte prosím...</p>
+    </div>
+
+
+    <table class="crossword" id="crossword">
+        @for (int y = 0; y < Model.height; y++)
+        {
+            <tr class="row">
+                @for (int x = 0; x < Model.width; x++)
+                {
+                    <td class="cell" data-row="@x" data-col="@y"></td>
+                }
+            </tr>
+        }
+    </table>
+</div>
 
 <div class="cluesContainer">
     <div id="cluesHorizontalContainer" class="clues"></div>

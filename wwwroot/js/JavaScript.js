@@ -1,4 +1,5 @@
 ﻿var emptyField = " ";
+
 function settingVariables() {
     var x = 15; //prompt("Zadej první číslo:", "");
     var width = parseInt(x);
@@ -7,18 +8,25 @@ function settingVariables() {
     //typ křížovky 
     console.log("Start");
     var isBritish = true;
+    if (isBritish) {
+        document.documentElement.style.setProperty('--size', '80px');
+    } else {
+        document.documentElement.style.setProperty('--size', '80px');
+    }
+
     var isCzechLanguage = true;
     if (height > 0 && width > 0) {
         document.documentElement.style.setProperty('--rows', x);
         document.documentElement.style.setProperty('--columns', y);
-        document.documentElement.style.setProperty('--max-table-height', (y * 80) + "px");
     }
     else {
         console.error("Chybně zadané vstupní hodnoty!");
         return;
     }
 
+    showLoadingIndicator();
     generateGrid(width, height);
+
     $.ajax({
         url: "/Home/Generate",
         type: "POST",
@@ -60,7 +68,7 @@ function settingVariables() {
             } else {
                 CellsWithSecret(data, width, height, isCzechLanguage);
             }
-
+            hideLoadingIndicator();
         }
     });
 }
@@ -120,7 +128,7 @@ function CellsWithSecret(data, width, height, isCzechLanguage) {
     for (let y = 0; y < height; y++) {
         for (let x = 0; x < width; x++) {
             const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
-            var content = cell.textContent; 
+            var content = cell.textContent;
             if (content.includes("TAJENKA 1") || content.includes("TAJENKA 2") ||
                 content.includes("SECRET 1") || content.includes("SECRET 2")) {
                 var i = 1;
@@ -256,15 +264,6 @@ function insertDivider(clue, x, y) {
 
 
 function printCrossword() {
-    /*var element = document.getElementById('crosswordResult');
-    var printWindow = window.open('', '');
-    //printWindow.document.write('<html><head><title>Tisk</title></head><body>');
-    printWindow.document.write(element.innerHTML);
-    //printWindow.document.write('</body></html>');
-    printWindow.document.close();
-   
-    printWindow.print();
-   */
     window.print();
 }
 document.addEventListener("focus", function (event) {
@@ -279,4 +278,20 @@ function help() {
     } else {
         console.log("Žádný prvek není vybrán.");
     }
+}
+
+
+function showLoadingIndicator() {
+   /* var targetElement = document.getElementById('crosswordResult');
+    console.log(targetElement);
+    var loadingIndicator = document.getElementById('loadingIndicator');
+    console.log(loadingIndicator);
+   // targetElement.parentNode.insertBefore(targetElement, loadingIndicator);
+    loadingIndicator.style.display = 'block';
+    //document.getElementById('loadingIndicator').style.display = 'block';
+    */
+}
+
+function hideLoadingIndicator() {
+    document.getElementById('loadingIndicator').style.display = 'none';
 }
