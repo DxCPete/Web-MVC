@@ -13,7 +13,6 @@ namespace BAK_web.Models
         public bool isCzechLanguage { get; set; } = true;
         public int difficulty { get; set; } = 1;
         private WordComparer comparer { get; } = new WordComparer();
-        static string currentDirectory = System.Environment.CurrentDirectory;
         static string basePath = AppDomain.CurrentDomain.BaseDirectory + "Models\\";
         private string conStr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"" + basePath + "Directory.mdf\";Integrated Security=True";
         int limit = 150;

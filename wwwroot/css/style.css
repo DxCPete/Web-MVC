@@ -7,9 +7,14 @@
 body, html {
     background-color: gray;
     margin: 0;
+}
+
+.body-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 button {
@@ -26,12 +31,15 @@ button {
 
 .crossword {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(calc(100% / var(--columns)), 1fr);
     grid-template-rows: repeat(var(--rows), 1fr);
     background-color: white;
     z-index: 1;
     position: relative;
-    width: calc(var(--columns) * var(--size)px) ;
+    width: calc(var(--columns) * var(--size));
+    margin: 0 auto;
+    place-items: center;
 }
 
 .row {
@@ -48,6 +56,7 @@ button {
     font-size: 30px;
     color: black;
     border: 1px solid black;
+    box-sizing: border-box;
 }
 
 .cell-clue {
@@ -88,6 +97,7 @@ table {
     padding: 0; /* Odstranění vnitřního odsazení */
     border-spacing: 0;
     max-height: calc(var(--rows) * var(--size));
+    display: block;
     box-sizing: border-box;
 }
 
@@ -130,24 +140,7 @@ li {
     flex-direction: row;
 }
 
-@media print {
-    .dontPrint, button, header {
-        display: none;
-    }
 
-    body {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: visible;
-    }
-
-    table {
-        page-break-inside: auto; /* Zabraňuje rozdělení tabulky přes stránky */
-        overflow: visible;
-        margin: 0 auto;
-    }
-}
 
 textarea {
     white-space: nowrap;
@@ -194,14 +187,38 @@ textarea {
     }
 }
 
-.test-container {
+.crossword-container {
     display: grid;
     justify-items: center;
     align-items: center;
     position: relative;
 }
 
-    .test-container > * {
-        grid-column-start: 1;
-        grid-row-start: 1;
+crossword-container > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+.body-content {
+    max-width: 2000px;
+    width: 100%;
+}
+
+@media print {
+    .dontPrint, button, header, footer {
+        display: none;
     }
+
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        /*overflow: visible;*/
+    }
+
+    table {
+        page-break-inside: auto; /* Zabraňuje rozdělení tabulky přes stránky */
+        overflow: visible;
+        margin: 0 auto;
+    }
+}

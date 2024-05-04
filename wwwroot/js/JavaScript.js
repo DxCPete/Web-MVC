@@ -1,10 +1,14 @@
 ﻿var emptyField = " ";
+var lastSelectedElementSelectors;
+var data;
+var width;
+var height;
 
 function settingVariables() {
-    var x = 15; //prompt("Zadej první číslo:", "");
-    var width = parseInt(x);
-    var y = 15;// prompt("Zadej druhé číslo:", "");
-    var height = parseInt(y);
+    var x = 12; //prompt("Zadej první číslo:", "");
+    width = parseInt(x);
+    var y = 12;// prompt("Zadej druhé číslo:", "");
+    height = parseInt(y);
     //typ křížovky 
     console.log("Start");
     var isBritish = true;
@@ -32,7 +36,7 @@ function settingVariables() {
         type: "POST",
         data: { width: width, height: height, isBritish: isBritish, isCzechLanguage: isCzechLanguage },
         success: function (response) {
-            const data = response.crossword;
+            data = response.crossword;
             var cluesHorizontal;
             var cluesVertical;
             if (isBritish) {
@@ -41,11 +45,9 @@ function settingVariables() {
                 printLegends(cluesHorizontal, cluesVertical, isCzechLanguage);
             }
 
-            var index = 0;
             for (let y = 0; y < height; y++) {
                 for (let x = 0; x < width; x++) {
                     const cellContent = data[x * height + y];
-                    index++;
                     if (cellContent != null) {
                         if (cellContent.length < 3) {
                             if (cellContent != emptyField) {
@@ -69,6 +71,7 @@ function settingVariables() {
                 CellsWithSecret(data, width, height, isCzechLanguage);
             }
             hideLoadingIndicator();
+            saveLastCrossword(data);
         }
     });
 }
@@ -266,30 +269,55 @@ function insertDivider(clue, x, y) {
 function printCrossword() {
     window.print();
 }
+
+var lastSelectedElementX = null;
+var lastSelectedElementY = null;
+
 document.addEventListener("focus", function (event) {
-    if (event.target.closest('.crossword')) {
-        lastSelectedElement = event.target;
+    var target = event.target.parentElement;
+    if (target && target.hasAttribute('data-row') && target.hasAttribute('data-col')) {
+        lastSelectedElementSelectors = {
+            row: target.getAttribute('data-row'),
+            col: target.getAttribute('data-col')
+        };
+        lastSelectedElementX = target.getAttribute('data-row');
+        lastSelectedElementY = target.getAttribute('data-col');
     }
 }, true);
 
 function help() {
-    if (lastSelectedElement) {
-        console.log("Vybraný prvek:", lastSelectedElement.textContent);
+    if (lastSelectedElementSelectors) {
+        const cell = document.querySelector('[data-row="' + lastSelectedElementSelectors.row + '"][data-col="' + lastSelectedElementSelectors.col + '"]');
+        const letter = cell.querySelector('.letter');
+        console.log(letter.value);
     } else {
-        console.log("Žádný prvek není vybrán.");
+        /* poradit 1. písmeno, který je špatně */
+        for (let y = 0; y < height; y++) {
+            for (let x = 0; x < width; x++) {
+                const cellContent = data[x * height + y];
+                if (cellContent != null && cellContent.length < 3) {
+                    const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
+                    const letter = cell.querySelector('.letter');
+                    console.log(cell);
+                    console.log(letter);
+                    if (letter.value != cellContent) {
+                        console.log(cellContent);
+                        return;
+                    }
+                }
+            }
+        }
     }
 }
 
+function saveLastCrossword(data) {
+
+}
+
+
 
 function showLoadingIndicator() {
-   /* var targetElement = document.getElementById('crosswordResult');
-    console.log(targetElement);
-    var loadingIndicator = document.getElementById('loadingIndicator');
-    console.log(loadingIndicator);
-   // targetElement.parentNode.insertBefore(targetElement, loadingIndicator);
-    loadingIndicator.style.display = 'block';
-    //document.getElementById('loadingIndicator').style.display = 'block';
-    */
+    /*document.getElementById('loadingIndicator').style.display = 'block';*/
 }
 
 function hideLoadingIndicator() {
