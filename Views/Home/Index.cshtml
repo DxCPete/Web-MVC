@@ -14,7 +14,19 @@
 
 <body>
     <div class="body-container">
-        <div id="crosswordResult"></div>
         <button onclick="settingVariables()" class="dontPrint">Generovat</button>
+
+
+        <div id="crosswordResult"></div>
+        <div id="options">
+            <span id="options-text">
+                Zvolte typ křížovky:
+            </span>
+
+            <div class="buttons">
+                <button onclick="chooseOption(1)">Britská</button>
+                <button onclick="chooseOption(2)">Švédská</button>
+            </div>
+        </div>
     </div>
 </body>

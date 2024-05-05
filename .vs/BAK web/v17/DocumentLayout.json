@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|c:\\users\\pete\\onedrive\\desktop\\todo\\bak web\\wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:wwwroot\\js\\javascript.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\views\\home\\crosswordpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F061A391-0100-46FB-8881-03F1A55AE9D4}|BAK_web.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,46 +34,43 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABRAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-25T12:27:24.562Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-25T12:27:24.562Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CrosswordPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\CrosswordPartial.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\CrosswordPartial.cshtml",
               "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Views\\Home\\CrosswordPartial.cshtml",
               "RelativeToolTip": "Views\\Home\\CrosswordPartial.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAcAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABEAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-04-25T06:46:01.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-25T06:46:01.436Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "style.css",
               "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
               "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\wwwroot\\css\\style.css",
               "RelativeToolTip": "wwwroot\\css\\style.css",
-              "ViewState": "AQIAAMMAAAAAAAAAAAAAANcAAAAeAAAA",
+              "ViewState": "AQIAAMQAAAAAAAAAAAAAANsAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-04-20T18:40:48.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-20T18:40:48.594Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -81,8 +78,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAB0AAAAAAAAAAAAhwDIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T16:47:04.172Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-24T16:47:04.172Z"
             },
             {
               "$type": "Document",
@@ -92,7 +88,7 @@
               "RelativeDocumentMoniker": "wwwroot\\js\\JavaScript.js",
               "ToolTip": "C:\\Users\\Pete\\OneDrive\\Desktop\\todo\\bak web\\wwwroot\\js\\JavaScript.js",
               "RelativeToolTip": "wwwroot\\js\\JavaScript.js",
-              "ViewState": "AQIAABwBAAAAAAAAAAAqwC8BAAAxAAAA",
+              "ViewState": "AQIAAFQBAAAAAAAAAAAAAGMBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-04-03T14:51:51.955Z",
               "EditorCaption": ""

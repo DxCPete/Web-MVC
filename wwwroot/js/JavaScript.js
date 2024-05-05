@@ -4,14 +4,38 @@ var data;
 var width;
 var height;
 
-function settingVariables() {
-    var x = 12; //prompt("Zadej první číslo:", "");
+
+
+function showOptions(cb) {
+    document.getElementById("options").style.display = "flex";
+    return new Promise(resolve => {
+        window.resolveOption = resolve; // Uložit resolve funkci do globální proměnné
+    });
+}
+
+function chooseOption(option) {
+    if (window.resolveOption) {
+        window.resolveOption(option);
+    }
+    document.getElementById("options").style.display = "none";
+}
+
+async function settingVariables() {
+    //showOptions();
+
+    const option = await showOptions();
+    console.log(option);
+
+    var x = prompt("Zadej první číslo:", "");
     width = parseInt(x);
-    var y = 12;// prompt("Zadej druhé číslo:", "");
+    var y =  prompt("Zadej druhé číslo:", "");
     height = parseInt(y);
     //typ křížovky 
     console.log("Start");
     var isBritish = true;
+    if (option == 2) {
+        isBritish = false;
+    }
     if (isBritish) {
         document.documentElement.style.setProperty('--size', '80px');
     } else {
@@ -28,7 +52,6 @@ function settingVariables() {
         return;
     }
 
-    showLoadingIndicator();
     generateGrid(width, height);
 
     $.ajax({
@@ -310,14 +333,25 @@ function help() {
     }
 }
 
-function saveLastCrossword(data) {
-
+function check() {
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            const cellContent = data[x * height + y];
+            if (cellContent != emptyField && cellContent.length < 3) {
+                const cell = document.querySelector('[data-row="' + x + '"][data-col="' + y + '"]');
+                const letter = cell.querySelector('.letter');
+                if (letter.value != cellContent) {
+                    console.log("Tady chyba: " + x + " " + y + " . Správně má být: " + cellContent)
+                    return;
+                }
+            }
+        }
+    }
+    console.log("Všechno správně");
 }
 
+function saveLastCrossword(data) {
 
-
-function showLoadingIndicator() {
-    /*document.getElementById('loadingIndicator').style.display = 'block';*/
 }
 
 function hideLoadingIndicator() {

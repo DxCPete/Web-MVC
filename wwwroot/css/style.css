@@ -5,7 +5,6 @@
 }
 
 body, html {
-    background-color: gray;
     margin: 0;
 }
 
@@ -202,6 +201,19 @@ crossword-container > * {
 .body-content {
     max-width: 2000px;
     width: 100%;
+}
+
+#options {
+    padding: 5px;
+    background-color: gray;
+    display: none;
+    flex-direction: column;
+    
+}
+
+#options-text {
+    font-size: 20px;
+    margin-left: 10px;
 }
 
 @media print {
